@@ -1,38 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    /* padding and border will be included
+    in the total width and height of the element */
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: rgb(3, 0, 31);
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+
 .App {
-  text-align: center;
+    /* 100 viewport height */
+    min-height: 100vh;
+    /* default flex-direction is horizontal */
+    display: flex;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sidebar {
+    /* this is so similar to flex-basis */
+    flex: 3;
+    border-right: 1px solid rgb(100, 100, 100);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main {
+    /* flex-basis in disguise */
+    flex: 9;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.logo {
+    margin-right: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.brand {
+    font-size: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.upperside {
+    padding: 2.5rem;
+    border-bottom: 1px solid rgba(100, 100, 100);
+    /* 70% of viewport height */
+    height: 70%;
+}
+
+.uppersideTop {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.addBtn {
+    height: 2rem;
+    padding-right: 1rem;
+}
+
+.midBtn {
+    /* light purple background */
+    background: #5A4BFF;
+    border: none;
+    color: white;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    width: 25rem;
+    display: flex;
+    /* crossAxisAlignment */
+    align-items: center;
+    /* mainAxisAlignment */
+    justify-content: center;
+    cursor: pointer;
+    /* the auto is to center the
+    button element */
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    border-radius: 0.5rem;
+}
+
+.query {
+    /* a flex element is like a block element */
+    display: flex;
+    /* crossAxisAlignment */
+    align-items: center;
+    /* inherit the closest parent
+    background color */
+    background: transparent;
+    color: rgba(222, 222, 222, 1);
+    padding: 1.5rem;
+    width: 25rem;
+    margin: 1rem auto;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(98, 98, 98, 1);
+}
+
+.query>img {
+    /* space the image and the
+  text */
+    margin-right: 2rem;
+    /* so as to maintain the
+    aspect ratio of the image */
+    object-fit: cover;
+    height: 1.75rem;
+}
+
+.lowerSide {
+    padding: 2rem;
+}
+
+.listItems {
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.listItemsImg {
+    margin: 1rem;
+    padding-right: 2rem;
+}
+
+
+/* targetting the first child of the
+list items */
+
+.listItems:nth-child(1)>.listItemsImg {
+    margin-right: 0.5rem;
+}
+
+
+/* targetting the third child of the
+list items */
+
+.listItems:nth-child(3)>.listItemsImg {
+    margin-right: 0.75rem;
+}
+
+.main {
+    /* rem is = 16x */
+    min-height: calc(100vh - 14rem);
+    display: flex;
+    flex-direction: column;
+    /* crossAxisAlignment */
+    align-items: center;
+    margin: 6rem 10rem 0rem;
+}
+
+.chats {
+    overflow: hidden;
+    /* scroll along the y-axis */
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    width: 100%;
+    max-width: 70rem;
+    /* calculator function in css */
+    height: calc(100vh - 17rem);
+}
+
+.chats .chat {
+    margin: 1rem;
+    padding: 2rem 3rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.chatImg {
+    object-fit: cover;
+    width: 3.5rem;
+    margin-right: 2rem;
+    border-radius: 0.5rem;
+}
+
+.chatFooter {
+    /* should be automatic without a set value */
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bot {
+    background: rgba(28, 30, 58, 1);
+    width: fit-content;
+    border-radius: 0.5rem;
+}
+
+.inp {
+    padding: 0.5rem;
+    background: rgba(28, 38, 58, 1);
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    width: 68rem;
+}
+
+.inp input {
+    width: calc(100% - 3rem);
+    outline: none;
+    padding: 1.25rem;
+    color: w hite;
+}
+
+.inp input,
+.send {
+    background: transparent;
+    border: none;
+}
+
+.chatFooter>p {
+    margin: 2rem 0;
 }
